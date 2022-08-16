@@ -7,7 +7,7 @@ const Card = (props) => {
       className={props.className}
       onClick={(e) => props.onClick(props.id, props.className)}
     >
-      {props.cardValue}
+      <span className={props.spanClassName}>{props.cardValue}</span>
     </div>
   );
 };

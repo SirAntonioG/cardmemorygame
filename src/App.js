@@ -73,6 +73,7 @@ const App = (props) => {
             key={card.cardId}
             cardValue={card.cardValue}
             onClick={handleCardClick}
+            spanClassName="hidden"
           />
         ))}
       </div>
