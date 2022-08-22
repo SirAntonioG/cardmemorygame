@@ -4,8 +4,13 @@ const Card = (props) => {
   const classes = props.isGuessed ? "card card-selected" : "card";
   const cardId = props.id;
   const firstCardId = props.firstCard.cardId;
-  const isEqualFirstCard = cardId === firstCardId;
-  const hiddenClass = isEqualFirstCard ? "visible" : "hidden";
+  const secondCardId = props.secondCard.cardId;
+  const isEqualCard = cardId === firstCardId || cardId === secondCardId;
+  let hiddenClass = isEqualCard ? "visible" : "hidden";
+  if (props.isGuessed) {
+    hiddenClass = "visible";
+  }
+
   return (
     <div
       id={`card-${props.id}`}

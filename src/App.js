@@ -46,11 +46,16 @@ const App = (props) => {
                 : card;
             })
           );
-          setFirstCard({});
-          setSecondCard({});
+          setTimeout(() => {
+            setFirstCard({});
+            setSecondCard({});
+          }, 100);
         } else {
-          setFirstCard({});
-          setSecondCard({});
+          setSecondCard(cardAux);
+          setTimeout(() => {
+            setFirstCard({});
+            setSecondCard({});
+          }, 100);
         }
       }
     }
