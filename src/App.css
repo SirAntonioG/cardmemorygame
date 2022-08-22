@@ -23,10 +23,12 @@ h1 {
   font-size: 25px;
   font-weight: bold;
 }
-.cardSelected {
+.card-selected {
   background-color: orange;
-  padding: 52px;
 }
 .hidden{
   display: none;
+}
+.visible{
+  display: block;
 }

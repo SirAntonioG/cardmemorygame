@@ -55,25 +55,31 @@ const App = (props) => {
       }
     }
   };
-  // console.log("firstCard: ", firstCard);
-  // console.log("secondCard: ", secondCard);
-  console.log("cards", cards);
+
+  let gameStatus =
+    Object.entries(firstCard).length === 0
+      ? "Select two cards"
+      : "Select another card";
+  if (cards.every((card) => card.isGuessed === true)) {
+    gameStatus = "Congratulations you Win";
+  }
 
   return (
     <>
       <h1>CARD MEMORY GAME</h1>
       <div className="gameStatus">
-        <h4>Select two cards</h4>
+        <h4>{gameStatus}</h4>
       </div>
       <div className="container">
         {cards.map((card) => (
           <Card
             id={card.cardId}
-            className="card"
             key={card.cardId}
             cardValue={card.cardValue}
             onClick={handleCardClick}
-            spanClassName="hidden"
+            isGuessed={card.isGuessed}
+            firstCard={firstCard}
+            secondCard={secondCard}
           />
         ))}
       </div>
